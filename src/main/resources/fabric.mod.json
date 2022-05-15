@@ -22,7 +22,7 @@
     ]
   },
   "mixins": [
-    "breast.mixins.json",
+    "oppai.mixins.json",
     "customuv.mixins.json"
   ],
 

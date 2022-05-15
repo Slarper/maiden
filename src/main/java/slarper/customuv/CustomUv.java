@@ -6,6 +6,9 @@ import slarper.customuv.mixin.CuboidAccessor;
 import slarper.customuv.mixin.ModelPartAccessor;
 
 public class CustomUv {
+    private CustomUv() {
+    }
+
     public static int getFaceByDirection(Direction direction){
         return switch (direction){
             case UP -> 3;
@@ -27,9 +30,9 @@ public class CustomUv {
                              ModelPart.Vertex[] vertices,
                              int upRightCorner, int upLeftCorner, int downLeftCorner, int downRightCorner
     ){
-        vertices[downLeftCorner] = vertices[downLeftCorner].remap(maxU / textureSizeU, minV / textureSizeV);
-        vertices[downRightCorner] = vertices[downRightCorner].remap(minU / textureSizeU, minV / textureSizeV);
-        vertices[upRightCorner] = vertices[upRightCorner].remap(minU / textureSizeU, maxV / textureSizeV);
-        vertices[upLeftCorner] = vertices[upLeftCorner].remap(maxU / textureSizeU, maxV / textureSizeV);
+        vertices[upRightCorner] = vertices[upRightCorner].remap(maxU / textureSizeU, minV / textureSizeV);
+        vertices[upLeftCorner] = vertices[upLeftCorner].remap(minU / textureSizeU, minV / textureSizeV);
+        vertices[downLeftCorner] = vertices[downLeftCorner].remap(minU / textureSizeU, maxV / textureSizeV);
+        vertices[downRightCorner] = vertices[downRightCorner].remap(maxU / textureSizeU, maxV / textureSizeV);
     }
 }
